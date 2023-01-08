@@ -1,0 +1,31 @@
+let a = document.querySelector('#items');
+console.log(a.parentElement);
+let b=a.parentElement;
+b.style.border='solid 5px orange';
+console.log(b.lastElementChild);
+let c=b.lastElementChild;
+c.style.border='solid 3px green';
+console.log(b.lastChild);
+console.log(b.firstElementChild);
+let d = b.firstElementChild;
+d.style.border='solid 3px yellow';
+d.style.textAlign='center';
+console.log(b.firstChild);
+console.log(a.nextSibling);
+console.log(a.nextElementSibling);
+console.log(a.previousElementSibling);
+let e = a.previousElementSibling;
+e.style.border='solid 3px blue';
+e.style.textAlign='center';
+let div = document.createElement('div');
+div.id='d1';
+div.setAttribute('title','hello ji');
+var textnode=document.createTextNode('hello world');
+div.appendChild(textnode);
+console.log(div);
+b.insertBefore(div,d);
+let fc=c.firstElementChild;
+console.log(fc);
+b.insertBefore(div,c);
+
+
