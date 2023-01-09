@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: orange;
+        }
+        #box1{
+            background-color: white;
+            opacity: 90%;
+            border: 10px orange;
+            border-radius: 8px;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+        #bac{
+            text-align: center;
+            color: orange;
+        }
+        #txt{
+            text-align: center;
+        }
+        input{
+            border: 2px orange;
+        }
+        #submt{
+            margin-top: 10px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1" class="container w-50">
+    <form action="#" onsubmit="print(event)" id="f1" name="form1">
+        <h2 id="bac">BOOK A CALL</h2>
+        <h5 id="txt">Sorry cant see the text</h5>
+        <label for="name" class="form-label">Name</label><br>
+        <input type="text" id="name" name="Name"class="form-control"><br><br>
+        <label for="email" class="form-label">Email</label><br>
+        <input type="text" id="email" name="Email" class="form-control"><br><br>
+        <label for="phone" class="form-label">Phone</label><br>
+        <input type="number" id="phone" name="Phone" class="form-control"><br><br>
+        <label for="call" class="form-label">Time For Call</label><br>
+        <div class="input-group">
+        <input type="date" id="date" name="Date" class="form-control w-50">
+        <input type="time" id="time" name="Time"class="form-control w-50">
+    </div>
+        <input type="submit" id="submt" value="Get A Call" class="form-control"><br>
+    </form>
+</div>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="task10index.js"></script>
+</body>
+</html>
