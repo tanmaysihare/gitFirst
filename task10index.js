@@ -1,6 +1,5 @@
 document.getElementById('submt').onmouseover= mover;
 document.getElementById('submt').onmouseout= mout;
-//document.querySelector('#submt').onclick=save;
 //let nam=document.querySelectorAll('input');
 function mover(){
     document.querySelector('#submt').value = "Click Me TO Submit";
@@ -10,12 +9,24 @@ function mout(){
 }
 function print(event) {
     event.preventDefault();
-    localStorage.setItem('userName',event.target.Name.value);
-    localStorage.setItem('userEmail',event.target.Email.value);
-    localStorage.setItem('userNumber',event.target.Phone.value);
-    localStorage.setItem('userAppDate',event.target.Date.value);
-    localStorage.setItem('userAppTime',event.target.Time.value);
-        
+   // let multid=[];
+   const UserName=event.target.Name.value;
+   const UserEmail=event.target.Email.value;
+   const userNumber=event.target.Phone.value;
+   const userAppDate=event.target.Date.value;
+   const userAppTime=event.target.Time.value;
+    let userDetail={
+        UserName,
+        UserEmail,
+        userNumber,
+        userAppDate,
+        userAppTime,};
+    localStorage.setItem(userDetail.UserEmail,JSON.stringify(userDetail));
+    let dis=document.createElement('li');
+    let listt=document.querySelector('#display');
+    dis.textContent =userDetail.UserName+' - '+userDetail.UserEmail+' - '+userDetail.userNumber+' - '+userDetail.userAppDate+' - '+userDetail.userAppTime;
+   listt.appendChild(dis);
+
     }
    
    
