@@ -26,7 +26,20 @@ function print(event) {
     let listt=document.querySelector('#display');
     dis.textContent =userDetail.UserName+' - '+userDetail.UserEmail+' - '+userDetail.userNumber+' - '+userDetail.userAppDate+' - '+userDetail.userAppTime;
    listt.appendChild(dis);
-
+   let dbtn= document.createElement('button');
+   dbtn.className='btn btn-danger btn-sm float-right delete';
+   dbtn.appendChild(document.createTextNode('X'));
+   dbtn.addEventListener('click',removeItem);
+   dis.appendChild(dbtn);
     }
-   
-   
+    function removeItem(e) {
+        if(e.target.classList.contains('delete')){
+            if(confirm('are you sure ?')){
+                let listt=document.querySelector('#display');
+                let dis = document.querySelector('li');
+                listt.removeChild(dis);
+                let x=document.querySelector('#email').value;
+                localStorage.removeItem(x);
+            }
+        }
+    }
