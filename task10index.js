@@ -1,7 +1,7 @@
 document.getElementById('submt').onmouseover= mover;
 document.getElementById('submt').onmouseout= mout;
-document.querySelector('#submt').onclick=save;
-let name=document.querySelector('#name');
+//document.querySelector('#submt').onclick=save;
+//let nam=document.querySelectorAll('input');
 function mover(){
     document.querySelector('#submt').value = "Click Me TO Submit";
 }
@@ -10,13 +10,12 @@ function mout(){
 }
 function print(event) {
     event.preventDefault();
-     console.log(event.target.Name.value);
-     console.log(event.target.Email.value);
-     console.log(event.target.Phone.value);
-     console.log(event.target.Date.value);
-     console.log(event.target.Time.value);      
+    localStorage.setItem('userName',event.target.Name.value);
+    localStorage.setItem('userEmail',event.target.Email.value);
+    localStorage.setItem('userNumber',event.target.Phone.value);
+    localStorage.setItem('userAppDate',event.target.Date.value);
+    localStorage.setItem('userAppTime',event.target.Time.value);
+        
     }
-    function save() {
-      localStorage.setItem('Name',name.value);
-    }
+   
    
