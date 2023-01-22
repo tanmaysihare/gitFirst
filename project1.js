@@ -8,7 +8,7 @@ function print(event) {
         UserName,
         UserEmail,
         userNumber,};
-    localStorage.setItem(userDetail.userNumber,JSON.stringify(userDetail));
+    localStorage.setItem(userDetail.UserName,JSON.stringify(userDetail));
     let dis=document.createElement('li');
     let listt=document.querySelector('#display');
     dis.textContent =userDetail.UserName+' - '+userDetail.UserEmail+' - '+userDetail.userNumber;
@@ -22,7 +22,7 @@ function print(event) {
    edit.className='btn btn-success btn-sm float-right';
    edit.appendChild(document.createTextNode('edit'));
    edit.onclick = () => {
-    localStorage.removeItem(userDetail.userNumber);
+    localStorage.removeItem(userDetail.UserName);
     listt.removeChild(dis);
     document.getElementById('name').value = UserName;
     document.getElementById('email').value = UserEmail;
@@ -33,7 +33,7 @@ function print(event) {
         if(e.target.classList.contains('delete')){
             if(confirm('are you sure ?')){
                 listt.removeChild(dis);
-                localStorage.removeItem(userDetail.userNumber);
+                localStorage.removeItem(userDetail.UserName);
             }
         }
     }
