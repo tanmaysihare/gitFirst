@@ -14,7 +14,7 @@ function getPosts(){
     },1000);
 }
 function createPost(post){
-    return new Promise((resolve,reject)=>{
+    let promise = new Promise((resolve,reject)=>{
         setTimeout(()=>{
             posts.push({...post,createdAt: new Date().getTime()});
             const error=false;
@@ -27,7 +27,13 @@ function createPost(post){
     });
     
 }
-
+const user={}
+function updatrLastActivityTime(){
+    let promise1 =  Promise((resolve,reject)=>{
+        let a=new Date().getTime-posts.createdAt;
+        console.log(a);
+    })
+}
 function deletePOst(){
 for(let j=0;j<posts.length;j++){
     setTimeout(()=>{
@@ -41,5 +47,6 @@ const newfunction =()=>{
     deletePOst();
     
 }
-createPost({title:'post three',body:'this is post three'}).then(newfunction);
-createPost({title:'post four',body:'this is post four'}).then(newfunction);
+createPost({title:'post three',body:'this is post three'});
+createPost({title:'post four',body:'this is post four'});
+Promise.all([promise,promise1]).then((values)=>{console.log(values)});
