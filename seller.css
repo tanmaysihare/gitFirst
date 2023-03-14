@@ -1,0 +1,44 @@
+body{
+    background-color: brown;
+}
+#box1{
+    width: 550px;
+    height: inherit;
+    margin-left: 30%;
+    margin-top: 10%;
+    background-color: beige;
+    float: left;
+    border-radius: 5px;
+    border: 5px;
+    
+}
+#total{
+    width: auto;
+    height: 25px;
+    background-color: green;
+    display: inline-flex;
+    margin-bottom: 0px;
+}
+#form{
+    width: 225px;
+    background-color: royalblue;
+    float: left;
+}
+#box2{
+    width: 550px;
+    height: inherit;
+    margin: 5px;
+    padding: 5px;
+    border: 5px red;
+    border-radius: 5px;
+}
+#box3{
+    width: 300px;
+    height: inherit;
+    background-color: yellowgreen;
+    margin-right: 15px;
+    padding: 5px;
+    border: 5px red;
+    border-radius: 5px;
+    float: right;
+}
