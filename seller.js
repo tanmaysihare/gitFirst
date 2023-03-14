@@ -26,7 +26,6 @@ function print(event) {
       let total= document.createElement("div");
         total.id= "total";
        
-      
       axios.get("https://crudcrud.com/api/2e47421d337c44a29d15893a03f301c3/userdetail")
         .then((response) => {
           console.log(response);
