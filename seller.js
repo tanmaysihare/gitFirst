@@ -4,12 +4,13 @@ function print(event) {
     const usermail = document.getElementById("Email").value;
     let userDetail = { username, usermail};
     Post(userDetail);
+    Get();
   }
   
   function Post(userDetail) {
     axios
       .post(
-        "https://crudcrud.com/api/2e47421d337c44a29d15893a03f301c3/userdetail",
+        "https://crudcrud.com/api/829801be5e904286b7c490a092fce107/userdetail",
         userDetail
       )
       .then((response) => {
@@ -22,30 +23,37 @@ function print(event) {
   }
   
   function Get() {
-    document.addEventListener("DOMContentLoaded", () => {
-      let total= document.createElement("div");
-        total.id= "total";
-       
-      axios.get("https://crudcrud.com/api/2e47421d337c44a29d15893a03f301c3/userdetail")
+    document.addEventListener("DOMContentLoaded", () => {    
+      axios.get("https://crudcrud.com/api/829801be5e904286b7c490a092fce107/userdetail")
         .then((response) => {
           console.log(response);
+
           let totalprice=0;
+          let list = document.querySelector("#display");
+          list.innerHTML="";
           for (var i = 0; i < response.data.length; i++) {
             display(response.data[i]);
             totalprice += Number(response.data[i].username);
           }
-          total.innerHTML="YOUR TOTAL SELLING PRICE = "+totalprice;
+          let total = document.querySelector("#total");
+          if(total){
+            total.innerHTML="YOUR TOTAL SELLING PRICE = "+totalprice;  
+          }else{
+            total= document.createElement("div");
+            total.id = "total";
+            total.innerHTML = "YOUR TOTAL SELLING PRICE = " + totalprice;
+            let tprice = document.querySelector("#box1");
+            tprice.appendChild(total);
+          }
         });
-        let tprice=document.querySelector("#box1");
-        tprice.appendChild(total);
+        
     });
   }
   
   function display(response) {
     let li = document.createElement("li");
     let list = document.querySelector("#display");
-    li.textContent =
-      response.username + "-" + response.usermail;
+    li.textContent = response.username + "-" + response.usermail;
   
     let delet = document.createElement("button");
     delet.className = "btn btn-danger btn-sm float-right delete";
@@ -63,10 +71,11 @@ function print(event) {
         list.removeChild(li);
         axios
           .delete(
-            `https://crudcrud.com/api/2e47421d337c44a29d15893a03f301c3/userdetail/${id}`
+            `https://crudcrud.com/api/829801be5e904286b7c490a092fce107/userdetail/${id}`
           )
           .then((res) => {
             console.log(res);
+            Get();
           })
           .catch((err) => {
             console.log(err);

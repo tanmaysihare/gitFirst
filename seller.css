@@ -14,11 +14,12 @@ body{
 }
 
 #total{
-    width: auto;
+    width: 500px;
     height: 25px;
     background-color: green;
     display: inline-flex;
     margin-bottom: 0px;
+    margin-left: 0px;
 }
 #form{
     width: 225px;
